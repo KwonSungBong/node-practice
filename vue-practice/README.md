@@ -6,4 +6,10 @@ https://github.com/koajs/examples
 
 https://github.com/johndatserakis/koa-vue-notes-api
 
+https://knexjs.org/
+
+https://github.com/hapijs/joi
+
+
+
 
