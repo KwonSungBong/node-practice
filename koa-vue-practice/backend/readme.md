@@ -1,42 +1,12 @@
 # Koa 2 Restful Boilerplate
 
-## Description
+curl -d 'password=password' http://localhost:3000/api/authenticate
 
-Koa 2 RESTful API using :
+curl -H "Authorization: Bearer {token}" -H "Content-Type: application/json" -X POST -d '{"name":"test","totalPopulation":10,"country":"country"}' http://localhost:3000/api/cities
 
-* Koa 2
-* Mongodb + Mongoose
-* Babel
-* Asynchronous Functions (Async/Await)
+curl -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1MzU2OTI2MDB9.3ykgqtCSG3SyQg8ZwHzCZ_taPZSEzDH2PdwPnlWJ8Mk" -H "Content-Type: application/json" -X POST -d '{"name":"test","totalPopulation":10,"country":"country"}' http://localhost:3000/api/cities
 
-## Running
 
-Install dependencies
 
-```
-npm install
-```
 
-Start a Local Server
 
-```
-npm start
-```
-
-Run Test
-
-```
-npm test
-```
-
-Building and Running Production Server
-
-```
-npm run prod
-```
-
-**Note : Please make sure your MongoDB is running before using `npm start` or `npm run prod`**
-
-## License
-
-MIT &copy; [Thomas Blanc-Hector](https://github.com/jsnomad)
