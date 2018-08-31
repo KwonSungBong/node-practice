@@ -1,4 +1,4 @@
 # frontend
 
-https://github.com/devCrossNet/vue-starter
+https://github.com/chrisvfritz/vue-enterprise-boilerplate
 

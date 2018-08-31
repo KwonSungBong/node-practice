@@ -11,6 +11,12 @@ https://knexjs.org/
 https://github.com/hapijs/joi
 
 
+#######################################################################
+
 
 https://github.com/jsnomad/koa-restful-boilerplate
+
+
+https://github.com/chrisvfritz/vue-enterprise-boilerplate
+
 
