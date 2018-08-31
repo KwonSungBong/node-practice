@@ -1,82 +1,63 @@
 {
-  "name": "koa-vue-notes-api",
-  "version": "2.0.0",
-  "description": "A SPA using Koa as the backend and Vue as the frontend.",
-  "author": "John Datserakis",
-  "private": true,
-  "scripts": {
-    "watch": "NODE_ENV=development nodemon app.js --exec",
-    "test": "NODE_ENV=testing jest --forceExit",
-    "build": "NODE_ENV=production babel src -d build && npm run pretty",
-    "pretty": "prettier --write --print-width 80 --single-quote --trailing-comma es5 --tab-width 4 --no-semi 'src/**/*.js' 'tests/**/*.js'",
-    "start-production": "NODE_ENV=production pm2 start ecosystem.json",
-    "clean": "npm cache clean --force"
+  "name": "koa-restful-boilerplate",
+  "description": "Koa 2 RESTful API boilerplate",
+  "version": "1.0.0",
+  "author": "Thomas Blanc-Hector",
+  "keywords": [
+    "koa",
+    "rest",
+    "api",
+    "mongodb",
+    "mongoose",
+    "async",
+    "es7"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsnomad/koa-restful-boilerplate.git"
   },
   "license": "MIT",
-  "homepage": "https://github.com/johndatserakis/koa-vue-notes-api#readme",
+  "bugs": {
+    "url": "https://github.com/jsnomad/koa-restful-boilerplate/issues"
+  },
+  "homepage": "https://github.com/jsnomad/koa-restful-boilerplate#readme",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "nodemon server/ --exec babel-node",
+    "build": "babel server -d dist",
+    "lint": "eslint ./server",
+    "test": "npm run lint && npm run mocha",
+    "prod": "npm run build && node dist/",
+    "mocha": "./node_modules/.bin/mocha --compilers js:babel-register --require babel-polyfill --exit"
+  },
   "dependencies": {
-    "@sendgrid/mail": "6.2.1",
-    "axios": "^0.18.0",
-    "bcrypt": "^2.0.1",
-    "date-fns": "^1.29.0",
-    "dotenv": "^6.0.0",
-    "faker": "^4.1.0",
-    "fs-extra": "^6.0.1",
-    "ioredis": "^3.2.2",
-    "jest": "^23.1.0",
-    "joi": "^13.4.0",
-    "jsonwebtoken": "^8.2.2",
-    "kcors": "^2.2.1",
-    "knex": "^0.14.6",
-    "koa": "^2.5.1",
-    "koa-bodyparser": "^4.2.1",
-    "koa-json-error": "^3.1.2",
-    "koa-ratelimit": "^4.1.1",
-    "koa-router": "^7.4.0",
-    "koa-useragent": "^1.1.0",
-    "log4js": "^2.8.0",
-    "mysql": "^2.15.0",
-    "npm": "^6.1.0",
-    "pm2": "^2.10.4",
-    "randexp": "^0.4.9"
+    "babel-polyfill": "^6.5.0",
+    "glob": "^7.1.2",
+    "jsonwebtoken": "^8.1.1",
+    "koa": "^2.4.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-helmet": "^3.3.0",
+    "koa-jwt": "^3.3.0",
+    "koa-logger": "^3.1.0",
+    "koa-router": "^7.3.0",
+    "mongoose": "^5.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
-    "nodemon": "^1.17.5",
-    "prettier": "^1.13.4"
-  },
-  "babel": {
-    "presets": [
-      [
-        "env",
-        {
-          "targets": {
-            "browsers": [
-              "last 2 versions",
-              "safari >= 7"
-            ]
-          }
-        }
-      ]
-    ]
-  },
-  "keywords": [
-    "koa",
-    "koa2",
-    "api",
-    "boilerplate",
-    "vue",
-    "spa",
-    "backend",
-    "jwt",
-    "pm2",
-    "mysql",
-    "database"
-  ],
-  "jest": {
-    "testEnvironment": "node"
+    "babel-eslint": "^8.0.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-syntax-async-functions": "^6.5.0",
+    "babel-plugin-transform-async-to-generator": "^6.5.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-register": "^6.3.13",
+    "chai": "^4.1.2",
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.7.0",
+    "eslint-plugin-import": "^2.2.0",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.8.1",
+    "should": "^13.1.3",
+    "supertest": "^3.0.0"
   }
 }

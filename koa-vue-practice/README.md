@@ -12,4 +12,5 @@ https://github.com/hapijs/joi
 
 
 
+https://github.com/jsnomad/koa-restful-boilerplate
 
