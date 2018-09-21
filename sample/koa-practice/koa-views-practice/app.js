@@ -1,17 +1,11 @@
 import Koa from 'koa'
 import path from 'path'
-import render from 'koa-ejs'
+import views from 'koa-views'
 import router from './routes'
 
 const app = new Koa()
 
-render(app, {
-    root: path.join(__dirname, 'views'),
-    layout: 'layout',
-    viewExt: 'html',
-    cache: false,
-    debug: true
-});
+app.use(views(path.join(__dirname, '/views'), { extension: 'ejs' }))
 
 app.use(router.routes())
     .use(router.allowedMethods());
